@@ -118,8 +118,16 @@ const config: Config = {
               to: '/courses/intro',
             },
             {
-              label: 'Software Engineering',
-              to: '/courses/category/software-engineering',
+              label: 'Fundamentals',
+              to: '/courses/category/fundamentals',
+            },
+            {
+              label: 'Test Driven Development',
+              to: '/courses/category/test-driven-development',
+            },
+            {              
+              label: 'APIs',
+              to: '/courses/category/apis',
             },
             {
               label: 'DevOps',
