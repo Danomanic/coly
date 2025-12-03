@@ -3,6 +3,7 @@
   "position": 4,
   "link": {
     "type": "generated-index",
+    "slug": "/courses/apis",
     "description": "Learn how to interact with APIs effectively, covering RESTful principles, authentication methods, error handling, and best practices for designing and consuming APIs in modern applications."
   }
 }

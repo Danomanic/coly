@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -54,7 +54,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          routeBasePath: 'courses', // Change /docs to /courses
+          routeBasePath: '/', // Change /docs to /courses
           editUrl: 'https://github.com/Danomanic/coly/edit/main/'
         },
         blog: false, // Disable blog for now
@@ -65,6 +65,7 @@ const config: Config = {
     ],
   ],
 
+
   themes: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
@@ -74,7 +75,7 @@ const config: Config = {
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
-        docsRouteBasePath: '/courses',
+        docsRouteBasePath: ['/courses', '/challenges'],
         highlightSearchTermsOnTargetPage: true,
       },
     ],
@@ -98,25 +99,30 @@ const config: Config = {
           type: 'dropdown',
           label: 'Courses',
           position: 'left',
-          to: '/courses/intro',
+          to: '/courses',
           items: [
             {
-              to: '/courses/category/fundamentals',
+              to: '/courses/fundamentals',
               label: 'Fundamentals',
             },
             {
-              to: '/courses/category/test-driven-development',
+              to: '/courses/test-driven-development',
               label: 'Test Driven Development',
             },
             {
-              to: '/courses/category/apis',
+              to: '/courses/apis',
               label: 'APIs',
             },
             {
-              to: '/courses/category/devops',
+              to: '/courses/devops',
               label: 'DevOps',
             },
           ],
+        },
+        {
+          to: '/challenges',
+          label: 'Challenges',
+          position: 'left',
         },
       ],
       hideOnScroll: false,
@@ -139,13 +145,22 @@ const config: Config = {
               label: 'Test Driven Development',
               to: '/courses/category/test-driven-development',
             },
-            {              
+            {
               label: 'APIs',
               to: '/courses/category/apis',
             },
             {
               label: 'DevOps',
               to: '/courses/category/devops',
+            },
+          ],
+        },
+        {
+          title: 'Practice',
+          items: [
+            {
+              label: 'Challenges',
+              to: '/challenges',
             },
           ],
         },

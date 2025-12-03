@@ -1,0 +1,8 @@
+{
+  "label": "Courses",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Explore our comprehensive courses designed to enhance your skills in various domains of software development, from APIs to DevOps."
+  }
+}

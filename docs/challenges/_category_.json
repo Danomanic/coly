@@ -1,0 +1,8 @@
+{
+  "label": "Challenges",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Engage in practical coding challenges designed to test and improve your skills across various programming domains, from algorithms to system design."
+  }
+}

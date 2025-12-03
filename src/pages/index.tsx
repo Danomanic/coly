@@ -20,8 +20,14 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/courses/intro">
-            Start Learning
+            to="/courses/fundamentals">
+            Start your coding journey
+          </Link>
+          <span style={{width: '16px'}} /> {/* Spacer */}
+          <Link
+            className="button button--secondary button--lg"
+            to="/challenges">
+            Challenge Yourself
           </Link>
         </div>
       </div>
