@@ -135,23 +135,23 @@ const config: Config = {
           items: [
             {
               label: 'Getting Started',
-              to: '/courses/intro',
+              to: '/courses',
             },
             {
               label: 'Fundamentals',
-              to: '/courses/category/fundamentals',
+              to: '/courses/fundamentals',
             },
             {
               label: 'Test Driven Development',
-              to: '/courses/category/test-driven-development',
+              to: '/courses/test-driven-development',
             },
             {
               label: 'APIs',
-              to: '/courses/category/apis',
+              to: '/courses/apis',
             },
             {
               label: 'DevOps',
-              to: '/courses/category/devops',
+              to: '/courses/devops',
             },
           ],
         },
