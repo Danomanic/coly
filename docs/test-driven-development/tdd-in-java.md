@@ -10,9 +10,7 @@ Learn how to practice Test Driven Development using JUnit, Java's most popular t
 
 In Java, we use **JUnit** for writing tests. JUnit 5 (also known as JUnit Jupiter) is the current standard.
 
-### Maven Setup
-
-If you're using Maven, add this to your `pom.xml`:
+Add this dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -23,13 +21,9 @@ If you're using Maven, add this to your `pom.xml`:
 </dependency>
 ```
 
-### Gradle Setup
-
-If you're using Gradle, add this to your `build.gradle`:
-
-```gradle
-testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
-```
+:::tip
+If you haven't learned about Maven yet, check out the Maven Basics lesson in the Fundamentals section first.
+:::
 
 ## JUnit Basics
 
@@ -231,12 +225,24 @@ Most IDEs (IntelliJ, Eclipse, VS Code) have built-in test runners. Look for the 
 
 ### From Maven
 ```bash
+# Run all tests
 mvn test
+
+# Run tests in a specific class
+mvn test -Dtest=CalculatorTest
+
+# Run a specific test method
+mvn test -Dtest=CalculatorTest#testAddition
 ```
 
-### From Gradle
+### From Command Line (Without Maven)
+If you're not using Maven, you can run tests directly:
 ```bash
-gradle test
+# Compile test classes
+javac -cp .:junit-platform-console-standalone.jar CalculatorTest.java
+
+# Run tests
+java -jar junit-platform-console-standalone.jar --class-path . --scan-class-path
 ```
 
 ## Practice Exercise

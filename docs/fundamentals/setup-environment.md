@@ -55,14 +55,16 @@ Also verify the Java compiler:
 javac --version
 ```
 
-## Build Tools (Optional for Now)
+## Build Tools
 
-As you progress, you'll learn about build tools like:
+As you progress, you'll learn about **Maven**, which helps with:
 
-- **Maven**: Dependency management and project building
-- **Gradle**: Modern build automation tool
+- Dependency management (automatically downloading libraries)
+- Project building and compilation
+- Running tests
+- Packaging your application
 
-We'll cover these in later lessons!
+We'll cover Maven in detail after you write your first program!
 
 ## Next Steps
 

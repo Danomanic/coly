@@ -56,4 +56,4 @@ The filename must match the class name. Since our class is `HelloColy`, the file
 
 ## Next Steps
 
-Now that you've written your first program, let's learn about version control with Git.
+Now that you've written your first program, let's learn about Maven - the essential tool for managing Java projects.
