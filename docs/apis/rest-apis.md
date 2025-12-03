@@ -64,7 +64,7 @@ There are several tools available for testing REST APIs:
 
 **Postman** is a popular GUI application for testing APIs:
 - Visual interface for building requests
-- Save and organize requests into collections
+- Save and organise requests into collections
 - Test automation and scripting
 - Environment variables for different configurations
 

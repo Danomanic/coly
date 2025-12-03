@@ -86,7 +86,7 @@ git log
 ## Practice Exercise
 
 1. Create a new directory for a project
-2. Initialize a Git repository
+2. Initialise a Git repository
 3. Create a Java file with a simple program
 4. Stage and commit your changes
 5. Make a change to the file

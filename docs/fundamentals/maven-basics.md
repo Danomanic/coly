@@ -21,7 +21,7 @@ Think of Maven as your project's manager - it handles all the tedious tasks so y
 
 - **Dependency Management**: Automatically downloads and manages libraries
 - **Standard Project Structure**: Everyone follows the same layout
-- **Build Lifecycle**: Standardized build process (compile, test, package)
+- **Build Lifecycle**: Standardised build process (compile, test, package)
 - **Convention Over Configuration**: Sensible defaults that just work
 - **Wide Adoption**: Used by most Java projects and teams
 
@@ -81,7 +81,7 @@ The `pom.xml` (Project Object Model) is Maven's configuration file. Here's a bas
 
 ### Understanding the POM
 
-- **groupId**: Usually your organization's domain in reverse (e.g., `com.coly`)
+- **groupId**: Usually your organisation's domain in reverse (e.g., `com.coly`)
 - **artifactId**: Your project's name (e.g., `my-app`)
 - **version**: Your project's version (e.g., `1.0-SNAPSHOT`)
 - **dependencies**: External libraries your project needs

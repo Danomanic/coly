@@ -180,7 +180,7 @@ public void testCalculateDiscount() {
 
 ## Best Practices
 
-1. **Test One Thing**: Each test should verify one specific behavior
+1. **Test One Thing**: Each test should verify one specific behaviour
    ```java
    // Good: Tests one specific case
    @Test

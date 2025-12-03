@@ -30,7 +30,7 @@ This is often called the **Red-Green-Refactor** cycle.
 ## The Red-Green-Refactor Cycle in Detail
 
 ### Red Phase
-Write a failing test that describes the behavior you want. The test should fail because the functionality doesn't exist yet. This confirms your test can actually catch problems.
+Write a failing test that describes the behaviour you want. The test should fail because the functionality doesn't exist yet. This confirms your test can actually catch problems.
 
 ### Green Phase
 Write the **minimum** code needed to make the test pass. Don't worry about perfection - just get it working. Resist the urge to write extra features.
@@ -49,7 +49,7 @@ The tests protect you during refactoring - if they still pass, your changes didn
 TDD works especially well for:
 - **Business Logic**: Calculations, validations, algorithms
 - **Utility Functions**: String manipulation, data transformations
-- **API Endpoints**: Testing request/response behavior
+- **API Endpoints**: Testing request/response behaviour
 - **Bug Fixes**: Write a failing test that reproduces the bug, then fix it
 
 TDD may be less beneficial for:

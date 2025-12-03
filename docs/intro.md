@@ -44,7 +44,7 @@ Build on your fundamentals with professional software engineering practices:
 ### DevOps
 
 Learn how to build, deploy, and manage modern applications:
-- Containerization with Docker
+- Containerisation with Docker
 - CI/CD pipelines
 - Event-driven architecture with Kafka
 - Infrastructure as Code

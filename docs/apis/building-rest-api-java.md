@@ -215,4 +215,4 @@ Enhance the User API with:
 
 ## Next Steps
 
-Now that you can build REST APIs, learn about securing them with authentication and authorization.
+Now that you can build REST APIs, learn about securing them with authentication and authorisation.

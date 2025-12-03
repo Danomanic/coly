@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# Containerization with Docker
+# Containerisation with Docker
 
 Learn how to package your applications into containers for consistent deployment across any environment.
 
-## What is Containerization?
+## What is Containerisation?
 
-Containerization is a way to package your application with all its dependencies into a single, portable unit called a container.
+Containerisation is a way to package your application with all its dependencies into a single, portable unit called a container.
 
 ### Traditional Deployment vs Containers
 
@@ -24,7 +24,7 @@ Containerization is a way to package your application with all its dependencies 
 
 ## What is Docker?
 
-Docker is the most popular containerization platform. It allows you to:
+Docker is the most popular containerisation platform. It allows you to:
 - Build container images
 - Run containers
 - Share containers via Docker Hub
