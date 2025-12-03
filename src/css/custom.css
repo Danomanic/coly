@@ -96,6 +96,11 @@
   height: 32px;
 }
 
+/* Hides the hamburger menu toggle button */
+.navbar__toggle {
+  display: none;
+}
+
 /* Feature cards on homepage */
 .features_src-components-HomepageFeatures-styles-module {
   padding: 4rem 0;
