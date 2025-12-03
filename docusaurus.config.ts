@@ -1,8 +1,21 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import * as fs from 'fs';
+import * as path from 'path';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+// Read version information
+let versionInfo = { version: 'dev', fullVersion: 'dev' };
+try {
+  const versionPath = path.join(__dirname, 'version.json');
+  if (fs.existsSync(versionPath)) {
+    versionInfo = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+  }
+} catch (error) {
+  console.warn('Could not read version.json, using default version');
+}
 
 const config: Config = {
   title: 'COLY',
@@ -136,7 +149,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Daniel Pomfret. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Daniel Pomfret. Built with Docusaurus.<br/>Version: ${versionInfo.version}`,
     },
     prism: {
       theme: prismThemes.github,
