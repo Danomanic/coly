@@ -55,31 +55,6 @@ Also verify the Java compiler:
 javac --version
 ```
 
-## Your First Java Program
-
-Create a new file called `HelloColy.java` and add:
-
-```java
-public class HelloColy {
-    public static void main(String[] args) {
-        System.out.println("Hello, COLY!");
-    }
-}
-```
-
-Compile and run it in your terminal:
-
-```bash
-javac HelloColy.java
-java HelloColy
-```
-
-🎉 Congratulations! You've just run your first Java program!
-
-:::note
-The filename must match the class name. Since our class is `HelloColy`, the file must be `HelloColy.java`.
-:::
-
 ## Build Tools (Optional for Now)
 
 As you progress, you'll learn about build tools like:
@@ -91,4 +66,4 @@ We'll cover these in later lessons!
 
 ## Next Steps
 
-Now that your environment is set up, let's learn about variables and data types in Java.
+Now that your environment is set up, let's write your first Java program!
