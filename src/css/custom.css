@@ -1,0 +1,324 @@
+/**
+ * DanLab Custom Styles
+ * A modern, professional design for a learning platform
+ */
+
+/* Color palette - Tech-focused blue theme */
+:root {
+  /* Primary colors - Professional blue */
+  --ifm-color-primary: #1e40af;
+  --ifm-color-primary-dark: #1e3a8a;
+  --ifm-color-primary-darker: #1e3a8a;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+
+  /* Accent colors for different course types */
+  --color-fundamentals: #10b981;
+  --color-software-eng: #3b82f6;
+  --color-devops: #8b5cf6;
+
+  /* Typography */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --ifm-font-family-monospace: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Courier New', monospace;
+  --ifm-code-font-size: 95%;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.7;
+
+  /* Spacing */
+  --ifm-spacing-horizontal: 1.5rem;
+  --ifm-navbar-height: 4rem;
+
+  /* Code blocks */
+  --docusaurus-highlighted-code-line-bg: rgba(30, 64, 175, 0.1);
+
+  /* Borders and shadows */
+  --ifm-global-radius: 0.5rem;
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode colors */
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 246, 0.2);
+  --ifm-background-color: #0f172a;
+  --ifm-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  padding: 4rem 2rem;
+}
+
+[data-theme='dark'] .hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 1;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.navbar__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Logo styling */
+.navbar-logo {
+  height: 32px;
+}
+
+/* Feature cards on homepage */
+.features_src-components-HomepageFeatures-styles-module {
+  padding: 4rem 0;
+}
+
+.featureSvg_src-components-HomepageFeatures-styles-module {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+/* Course content improvements */
+.markdown {
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+}
+
+.markdown h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.markdown h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--ifm-color-primary-lighter);
+  padding-bottom: 0.5rem;
+}
+
+.markdown h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+/* Code blocks */
+.prism-code {
+  border-radius: var(--ifm-global-radius);
+  font-size: 0.9rem;
+}
+
+/* Inline code */
+code {
+  background-color: rgba(30, 64, 175, 0.1);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.9em;
+}
+
+[data-theme='dark'] code {
+  background-color: rgba(96, 165, 246, 0.15);
+  border: 1px solid rgba(96, 165, 246, 0.3);
+}
+
+/* Admonitions (tips, warnings, etc.) */
+.admonition {
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-card-shadow);
+  border-left-width: 6px;
+}
+
+.admonition-heading h5 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+/* Tables */
+.markdown table {
+  border-radius: var(--ifm-global-radius);
+  overflow: hidden;
+  box-shadow: var(--ifm-card-shadow);
+}
+
+.markdown table thead {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.markdown table thead th {
+  border-bottom: none;
+}
+
+/* Sidebar */
+.menu__link {
+  border-radius: var(--ifm-global-radius);
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: rgba(30, 64, 175, 0.1);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background-color: rgba(96, 165, 246, 0.1);
+}
+
+.menu__link--active {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.menu__link--active:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* Category labels */
+.menu__list-item-collapsible {
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+/* Buttons */
+.button {
+  border-radius: var(--ifm-global-radius);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.button--secondary {
+  background-color: white;
+  color: #1e3a8a;
+  border: 2px solid white;
+  font-weight: 700;
+}
+
+.button--secondary:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Hero button specific styling for better contrast */
+.hero .button--secondary {
+  background-color: white;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.hero .button--secondary:hover {
+  background-color: #f1f5f9;
+  color: #000000;
+}
+
+/* Footer */
+.footer {
+  background-color: #1e293b;
+  padding: 3rem 0;
+}
+
+[data-theme='dark'] .footer {
+  background-color: #020617;
+}
+
+.footer__title {
+  font-weight: 700;
+  color: white;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Pagination */
+.pagination-nav__link {
+  border-radius: var(--ifm-global-radius);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  transition: all 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-card-shadow);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utility classes */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .footer,
+  .pagination-nav,
+  .tocCollapsible {
+    display: none;
+  }
+}
