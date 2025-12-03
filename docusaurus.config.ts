@@ -92,7 +92,7 @@ const config: Config = {
             },
             {
               to: '/courses/category/test-driven-development',
-              label: 'Software Engineering',
+              label: 'Test Driven Development',
             },
             {
               to: '/courses/category/apis',
