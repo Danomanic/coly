@@ -220,6 +220,21 @@ code {
   color: var(--ifm-color-primary);
 }
 
+/* Ensure category labels are always readable in light mode */
+.menu__list-item-collapsible .menu__link {
+  color: var(--ifm-color-primary);
+}
+
+.menu__list-item-collapsible .menu__link--active {
+  color: var(--ifm-color-primary-dark);
+  background-color: rgba(30, 64, 175, 0.1);
+}
+
+[data-theme='dark'] .menu__list-item-collapsible .menu__link--active {
+  color: var(--ifm-color-primary-light);
+  background-color: rgba(96, 165, 246, 0.15);
+}
+
 /* Buttons */
 .button {
   border-radius: var(--ifm-global-radius);
