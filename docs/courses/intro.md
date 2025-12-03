@@ -1,5 +1,4 @@
 ---
-displayed_sidebar: coursesSidebar
 sidebar_position: 1
 slug: /courses
 ---

@@ -23,12 +23,6 @@ function HomepageHeader() {
             to="/courses/fundamentals">
             Start your coding journey
           </Link>
-          <span style={{width: '16px'}} /> {/* Spacer */}
-          <Link
-            className="button button--secondary button--lg"
-            to="/challenges">
-            Challenge Yourself
-          </Link>
         </div>
       </div>
     </header>

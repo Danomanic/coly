@@ -96,33 +96,16 @@ const config: Config = {
       },
       items: [
         {
-          type: 'dropdown',
-          label: 'Courses',
-          position: 'left',
-          to: '/courses',
-          items: [
-            {
-              to: '/courses/fundamentals',
-              label: 'Fundamentals',
-            },
-            {
-              to: '/courses/test-driven-development',
-              label: 'Test Driven Development',
-            },
-            {
-              to: '/courses/apis',
-              label: 'APIs',
-            },
-            {
-              to: '/courses/devops',
-              label: 'DevOps',
-            },
-          ],
+          type: "docSidebar",
+          sidebarId: "coursesSidebar",
+          position: "left",
+          label: "Courses",
         },
         {
-          to: '/challenges',
-          label: 'Challenges',
-          position: 'left',
+          type: "docSidebar",
+          sidebarId: "challengesSidebar",
+          position: "left",
+          label: "Challenges",
         },
       ],
       hideOnScroll: false,
