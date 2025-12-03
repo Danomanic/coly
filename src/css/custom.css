@@ -288,6 +288,26 @@ code {
   box-shadow: var(--ifm-card-shadow);
 }
 
+/* Fix pagination arrow icons */
+.pagination-nav__label::before {
+  font-family: Arial, sans-serif;
+}
+
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: '←';
+  margin-right: 0.5rem;
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: '→';
+  margin-left: 0.5rem;
+}
+
+/* Hide the default question marks */
+.pagination-nav__sublabel {
+  font-family: var(--ifm-font-family-base);
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -310,6 +330,30 @@ html {
 
   .hero {
     padding: 3rem 1rem;
+  }
+}
+
+/* Mobile menu fixes */
+@media (max-width: 996px) {
+  .navbar__item {
+    display: block;
+  }
+
+  .navbar__items--right .navbar__item {
+    display: block;
+  }
+
+  .navbar-sidebar__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-sidebar__item {
+    padding: 0.5rem 0;
+  }
+
+  .menu__link {
+    padding: 0.5rem 1rem;
   }
 }
 

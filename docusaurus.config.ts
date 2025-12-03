@@ -81,12 +81,31 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'coursesSidebar',
-          position: 'left',
+          type: 'dropdown',
           label: 'Courses',
+          position: 'left',
+          to: '/courses/intro',
+          items: [
+            {
+              to: '/courses/category/fundamentals',
+              label: 'Fundamentals',
+            },
+            {
+              to: '/courses/category/test-driven-development',
+              label: 'Software Engineering',
+            },
+            {
+              to: '/courses/category/apis',
+              label: 'APIs',
+            },
+            {
+              to: '/courses/category/devops',
+              label: 'DevOps',
+            },
+          ],
         },
       ],
+      hideOnScroll: false,
     },
     footer: {
       style: 'dark',
