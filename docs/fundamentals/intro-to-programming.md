@@ -25,11 +25,10 @@ Think of it like writing a recipe:
 
 In this fundamentals section, you'll learn:
 
-1. Basic programming concepts (variables, loops, conditions)
-2. How to set up your development environment
-3. Your first program
-4. Version control with Git
-5. Problem-solving techniques
+1. How to set up your development environment
+2. Your first program
+3. Basic programming concepts (variables, loops, conditions etc)
+4. Problem-solving techniques
 
 ## Next Steps
 
