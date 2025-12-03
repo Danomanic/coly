@@ -55,6 +55,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'courses', // Change /docs to /courses
+          editUrl: 'https://github.com/Danomanic/coly/edit/main/'
         },
         blog: false, // Disable blog for now
         theme: {
