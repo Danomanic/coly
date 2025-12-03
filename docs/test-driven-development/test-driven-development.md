@@ -20,105 +20,54 @@ This is often called the **Red-Green-Refactor** cycle.
 
 ## Why Use TDD?
 
-- **Better Design**: Forces you to think about how your code will be used
-- **Confidence**: Tests give you confidence to refactor and make changes
+- **Better Design**: Forces you to think about how your code will be used before you write it
+- **Confidence**: Comprehensive tests give you confidence to refactor and make changes
 - **Documentation**: Tests serve as living documentation of how your code works
-- **Fewer Bugs**: Catch issues early before they reach production
-- **Faster Development**: Less time debugging, more time building
+- **Fewer Bugs**: Catch issues early in development before they reach production
+- **Faster Development**: Less time debugging, more time building features
+- **Better Code Coverage**: Writing tests first ensures all code paths are tested
 
-## TDD in Java
+## The Red-Green-Refactor Cycle in Detail
 
-In Java, we typically use **JUnit** for writing tests. JUnit is the most popular testing framework for Java.
+### Red Phase
+Write a failing test that describes the behavior you want. The test should fail because the functionality doesn't exist yet. This confirms your test can actually catch problems.
 
-### Setting Up JUnit
+### Green Phase
+Write the **minimum** code needed to make the test pass. Don't worry about perfection - just get it working. Resist the urge to write extra features.
 
-If you're using Maven, add this to your `pom.xml`:
+### Refactor Phase
+Now that you have a passing test, improve your code's design:
+- Remove duplication
+- Improve naming
+- Simplify logic
+- Extract methods or classes
 
-```xml
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <version>5.10.0</version>
-    <scope>test</scope>
-</dependency>
-```
+The tests protect you during refactoring - if they still pass, your changes didn't break anything!
 
-## Example: Building a Calculator with TDD
+## When to Use TDD
 
-Let's build a simple calculator using TDD.
+TDD works especially well for:
+- **Business Logic**: Calculations, validations, algorithms
+- **Utility Functions**: String manipulation, data transformations
+- **API Endpoints**: Testing request/response behavior
+- **Bug Fixes**: Write a failing test that reproduces the bug, then fix it
 
-### Step 1: Write the Test First
+TDD may be less beneficial for:
+- **UI/Visual Design**: Where quick iteration and visual feedback matter more
+- **Proof of Concepts**: When exploring ideas and requirements are unclear
+- **Simple CRUD Operations**: Where the logic is straightforward
 
-```java
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+## Common Misconceptions
 
-public class CalculatorTest {
-    @Test
-    public void testAddition() {
-        Calculator calc = new Calculator();
-        int result = calc.add(2, 3);
-        assertEquals(5, result);
-    }
-}
-```
+**"TDD means 100% test coverage"**
+- Not all code needs the same level of testing. Focus on critical business logic.
 
-### Step 2: Run the Test (It Fails)
+**"TDD is slower"**
+- Initially, yes. But over time, you spend less time debugging and fixing bugs.
 
-The test will fail because `Calculator` doesn't exist yet. This is expected!
-
-### Step 3: Write Minimum Code to Pass
-
-```java
-public class Calculator {
-    public int add(int a, int b) {
-        return a + b;
-    }
-}
-```
-
-### Step 4: Run the Test Again (It Passes!)
-
-Now your test should pass. You've successfully implemented addition!
-
-### Step 5: Add More Tests
-
-```java
-@Test
-public void testSubtraction() {
-    Calculator calc = new Calculator();
-    int result = calc.subtract(5, 3);
-    assertEquals(2, result);
-}
-
-@Test
-public void testMultiplication() {
-    Calculator calc = new Calculator();
-    int result = calc.multiply(4, 3);
-    assertEquals(12, result);
-}
-```
-
-## Best Practices
-
-1. **Test One Thing**: Each test should verify one specific behavior
-2. **Clear Names**: Test names should describe what they're testing
-3. **Arrange-Act-Assert**: Structure your tests clearly
-   - Arrange: Set up test data
-   - Act: Execute the code being tested
-   - Assert: Verify the result
-4. **Keep Tests Fast**: Tests should run quickly so you run them often
-5. **Independent Tests**: Tests shouldn't depend on each other
-
-## Practice Exercise
-
-Build a `StringUtils` class using TDD that can:
-1. Reverse a string
-2. Check if a string is a palindrome
-3. Count vowels in a string
-
-Write tests first, then implement!
+**"You must never write code without a test first"**
+- TDD is a guideline, not a rule. Use judgment about when it adds value.
 
 ## Next Steps
 
-Now that you understand TDD, let's learn about REST APIs and how to test them.
+Ready to practice TDD? Learn how to implement it in Java with JUnit and build your first test-driven application.
