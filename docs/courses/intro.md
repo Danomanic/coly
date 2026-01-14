@@ -13,6 +13,8 @@ COLY is created and maintained by **Daniel Pomfret**, a Senior Technical Lead wi
 
 With extensive hands-on experience in **Java**, **Node.js**, **AWS**, **Terraform**, **CI/CD**, and other modern software development practices, Daniel brings real-world expertise to every course. These materials are based on practical, production-proven techniques used in large-scale systems.
 
+If you find these courses helpful, consider [buying me a coffee](https://buymeacoffee.com/danomanic)!
+
 ## Who is this for?
 
 These courses are designed for anyone starting their journey into tech, whether you're:

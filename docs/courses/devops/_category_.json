@@ -1,6 +1,8 @@
 {
   "label": "DevOps",
-  "position": 5,
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "slug": "/courses/devops",

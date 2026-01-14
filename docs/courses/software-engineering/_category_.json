@@ -1,0 +1,11 @@
+{
+  "label": "Software Engineering",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "slug": "/courses/software-engineering",
+    "description": "Learn core software engineering skills from programming fundamentals to testing, APIs, and event-driven systems."
+  }
+}
