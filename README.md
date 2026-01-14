@@ -8,11 +8,18 @@ COLY (Code Online, Learn Yourself) provides structured courses for people starti
 
 ## Courses
 
-The platform includes:
+### Software Engineering
 
-- **Fundamentals**: Programming basics, Java, Git, and development environment setup
-- **Software Engineering**: TDD, REST APIs, code quality, and professional practices
-- **DevOps**: Docker, CI/CD with GitLab, Kafka, and infrastructure automation
+- **Fundamentals**: Programming basics, Java, variables, data types, loops, functions, and Maven
+- **Test Driven Development**: TDD concepts, unit testing, integration testing, component testing, and BDD with Cucumber
+- **APIs**: REST API design, building APIs with Spring Boot, and testing with REST Assured
+- **Event Driven Architecture**: Apache Kafka, producing and consuming events with Spring Boot
+
+### DevOps
+
+- **Git Basics**: Version control fundamentals
+- **Containerization**: Docker and container concepts
+- **CI/CD Pipelines**: Continuous integration and deployment
 
 ## Getting Started
 
@@ -57,46 +64,42 @@ npm run serve
 
 ```
 coly/
-├── docs/                      # Course content (Markdown files)
-│   ├── intro.md              # Welcome page
-│   ├── fundamentals/         # Basics of programming
-│   │   ├── _category_.json
-│   │   ├── intro-to-programming.md
-│   │   ├── setup-environment.md
-│   │   └── git-basics.md
-│   ├── software-engineering/ # Professional practices
-│   │   ├── _category_.json
-│   │   ├── test-driven-development.md
-│   │   └── rest-apis.md
-│   └── devops/              # DevOps practices
-│       ├── _category_.json
-│       ├── containerization.md
-│       └── cicd-pipelines.md
+├── docs/
+│   └── courses/
+│       ├── intro.md
+│       ├── software-engineering/
+│       │   ├── fundamentals/
+│       │   ├── test-driven-development/
+│       │   ├── apis/
+│       │   └── event-driven-architecture/
+│       └── devops/
+│           ├── git-basics.md
+│           ├── containerization.md
+│           └── cicd-pipelines.md
 ├── src/
-│   ├── components/          # React components
-│   │   └── HomepageFeatures/
-│   ├── css/                 # Custom styling
-│   └── pages/              # Custom pages
-│       └── index.tsx       # Homepage
-├── static/                  # Static assets (images, etc.)
-├── docusaurus.config.ts    # Site configuration
-└── sidebars.ts             # Sidebar navigation
+│   ├── components/
+│   ├── css/
+│   └── pages/
+├── static/
+├── docusaurus.config.ts
+└── sidebars.ts
 ```
 
 ## Adding New Content
 
 ### Create a New Course
 
-1. Create a new folder in `docs/` (e.g., `docs/advanced-topics/`)
+1. Create a new folder under the appropriate category (e.g., `docs/courses/software-engineering/new-topic/`)
 2. Add a `_category_.json` file:
 
 ```json
 {
-  "label": "Advanced Topics",
+  "label": "New Topic",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Advanced topics for experienced developers."
+    "slug": "/courses/software-engineering/new-topic",
+    "description": "Description of this course."
   }
 }
 ```
@@ -145,6 +148,10 @@ npm run build
 - [Docusaurus Documentation](https://docusaurus.io/)
 - [Markdown Guide](https://www.markdownguide.org/)
 - [React Documentation](https://react.dev/)
+
+## Support
+
+If you find these courses helpful, consider [buying me a coffee](https://buymeacoffee.com/danomanic)!
 
 ## Author
 
