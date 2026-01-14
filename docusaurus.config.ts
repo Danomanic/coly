@@ -121,16 +121,8 @@ const config: Config = {
               to: '/courses',
             },
             {
-              label: 'Fundamentals',
-              to: '/courses/fundamentals',
-            },
-            {
-              label: 'Test Driven Development',
-              to: '/courses/test-driven-development',
-            },
-            {
-              label: 'APIs',
-              to: '/courses/apis',
+              label: 'Software Engineering',
+              to: '/courses/software-engineering',
             },
             {
               label: 'DevOps',
