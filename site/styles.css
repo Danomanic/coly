@@ -110,6 +110,7 @@ html, body {
   font-weight: 700;
   letter-spacing: -0.02em;
   max-width: 16ch;
+  overflow-wrap: break-word;
   background: linear-gradient(180deg, #ffffff 0%, #b9d8e6 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -128,6 +129,7 @@ html, body {
   font-size: clamp(15px, 1.9vw, 19px);
   line-height: 1.6;
   color: var(--muted);
+  overflow-wrap: break-word;
 }
 
 /* ---- footer / locations ticker ---- */
@@ -165,4 +167,31 @@ html, body {
 @media (max-width: 640px) {
   .locations { display: none; }
   .footer { justify-content: center; }
+
+  .overlay { padding: 22px 18px 26px; }
+
+  /* Map sits in the upper third (positioned by main.js); keep the text
+     block anchored to the bottom so the two never overlap. */
+  .hero {
+    justify-content: flex-end;
+    gap: 13px;
+    padding-bottom: max(4vh, 12px);
+  }
+  .hero h1 {
+    font-size: clamp(27px, 8.2vw, 40px);
+    line-height: 1.08;
+    max-width: 100%;
+  }
+  .hero p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 6px 13px;
+    letter-spacing: 0.14em;
+  }
+  .brand img { height: 26px; }
+  .brand .wordmark { font-size: 19px; }
 }

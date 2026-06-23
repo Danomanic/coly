@@ -81,20 +81,28 @@
     canvas.height = Math.floor(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+    var mobile = W <= 640;
+
     // Fit the dot bounding box into the viewport, keeping equirectangular
     // aspect (1 unit of u spans 2x the screen distance of 1 unit of v).
     var contentU = bounds.uMax - bounds.uMin;
     var contentV = bounds.vMax - bounds.vMin;
-    var padX = W * 0.94, padY = H * 0.82;
+    // On phones the world map (2:1) is naturally a short band; give it the
+    // full width and place it in the upper third so the bottom is free for
+    // the text. On larger screens centre it and let the text overlay.
+    var padX = (mobile ? 0.99 : 0.94) * W;
+    var padY = (mobile ? 0.52 : 0.82) * H;
     var s = Math.min(padX / (contentU * 2), padY / contentV);
     sx = s * 2;
     sy = s;
+    var vCenter = mobile ? 0.34 : 0.5; // map's vertical centre as a fraction of H
     originX = (W - contentU * sx) / 2 - bounds.uMin * sx;
-    originY = (H - contentV * sy) / 2 - bounds.vMin * sy;
+    originY = H * vCenter - (contentV * sy) / 2 - bounds.vMin * sy;
 
-    // Scale feature sizes a little with the map.
-    dotR = Math.max(0.9, Math.min(1.7, s * 0.0022));
-    nodeR = Math.max(2.4, Math.min(4.2, s * 0.006));
+    // Scale feature sizes with the map; bump the floors on phones so the
+    // small map still reads as distinct dots rather than a blur.
+    dotR = Math.max(mobile ? 1.05 : 0.9, Math.min(1.7, s * 0.0022));
+    nodeR = Math.max(mobile ? 3.0 : 2.4, Math.min(4.2, s * 0.006));
 
     drawMapLayer();
   }
@@ -126,7 +134,7 @@
       lift: 0.16 + Math.random() * 0.12
     };
   }
-  var PACKET_COUNT = 16;
+  var PACKET_COUNT = window.innerWidth <= 640 ? 9 : 16;
   var packets = [];
   for (var p = 0; p < PACKET_COUNT; p++) {
     packets.push(makePacket());
