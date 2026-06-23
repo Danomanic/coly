@@ -1,6 +1,6 @@
-# Deploying COLY to DigitalOcean App Platform
+# Deploying Coly to DigitalOcean App Platform
 
-This guide will help you deploy your COLY learning platform to DigitalOcean App Platform.
+This guide will help you deploy the Coly landing page to DigitalOcean App Platform.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ This guide will help you deploy your COLY learning platform to DigitalOcean App 
 1. **Create a new GitHub repository**:
    - Go to https://github.com/new
    - Repository name: `coly`
-   - Description: "Code Online, Learn Yourself - Software Engineering and DevOps learning platform"
+   - Description: "Coly — global platform for hosting containerised apps"
    - Choose Public or Private
    - **Do NOT initialize with README** (we already have code)
    - Click "Create repository"
@@ -146,14 +146,14 @@ The site is configured for static deployment with these npm scripts:
 ```json
 {
   "scripts": {
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "serve": "docusaurus serve"
+    "build": "node scripts/build-site.js",
+    "start": "npm run build && node scripts/serve.js",
+    "serve": "node scripts/serve.js"
   }
 }
 ```
 
-DigitalOcean will run `npm run build` which creates optimized static files in the `build/` directory.
+DigitalOcean will run `npm run build`, which generates the map data and copies the static files into the `build/` directory. There are no runtime or build dependencies.
 
 ## Troubleshooting
 

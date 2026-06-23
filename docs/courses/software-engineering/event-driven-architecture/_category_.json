@@ -1,9 +1,0 @@
-{
-  "label": "Event Driven Architecture",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "slug": "/courses/software-engineering/event-driven-architecture",
-    "description": "Learn how to build scalable, loosely coupled systems using event-driven architecture with Apache Kafka and Spring Boot."
-  }
-}
