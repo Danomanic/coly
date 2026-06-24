@@ -1,9 +1,10 @@
 /*
  * Coly landing-page map animation.
  *
- * Renders a dot-matrix world map (data baked in map-data.js), glowing
- * datacentre nodes, a faint network mesh between them, and light "packets"
- * of data flowing along the links. Everything is canvas; no dependencies.
+ * Renders a dot-matrix map of the UK & Ireland (data baked in map-data.js),
+ * glowing datacentre nodes, a faint network mesh between them, and light
+ * "packets" of data flowing along the links. Everything is canvas; no
+ * dependencies.
  */
 (function () {
   'use strict';
@@ -12,31 +13,25 @@
   var ctx = canvas.getContext('2d');
   var DOTS = window.COLY_MAP_DOTS || [];
 
-  // --- datacentre locations (lat, lng) ---
+  // --- UK datacentre locations (lat, lng) ---
   var CITIES = [
-    { id: 'lon', name: 'London',        lat: 51.5074, lng: -0.1278 },
-    { id: 'par', name: 'Paris',         lat: 48.8566, lng: 2.3522 },
-    { id: 'fra', name: 'Frankfurt',     lat: 50.1109, lng: 8.6821 },
-    { id: 'nyc', name: 'New York',      lat: 40.7128, lng: -74.006 },
-    { id: 'tor', name: 'Toronto',       lat: 43.6532, lng: -79.3832 },
-    { id: 'sfo', name: 'San Francisco', lat: 37.7749, lng: -122.4194 },
-    { id: 'sao', name: 'São Paulo',     lat: -23.5505, lng: -46.6333 },
-    { id: 'jnb', name: 'Johannesburg',  lat: -26.2041, lng: 28.0473 },
-    { id: 'mum', name: 'Mumbai',        lat: 19.0760, lng: 72.8777 },
-    { id: 'sgp', name: 'Singapore',     lat: 1.3521,  lng: 103.8198 },
-    { id: 'tok', name: 'Tokyo',         lat: 35.6762, lng: 139.6503 },
-    { id: 'syd', name: 'Sydney',        lat: -33.8688, lng: 151.2093 }
+    { id: 'lon', name: 'London',     lat: 51.5074, lng: -0.1278 },
+    { id: 'bir', name: 'Birmingham', lat: 52.4862, lng: -1.8904 },
+    { id: 'crf', name: 'Cardiff',    lat: 51.4816, lng: -3.1791 },
+    { id: 'man', name: 'Manchester', lat: 53.4808, lng: -2.2426 },
+    { id: 'lee', name: 'Leeds',      lat: 53.8008, lng: -1.5491 },
+    { id: 'edi', name: 'Edinburgh',  lat: 55.9533, lng: -3.1883 },
+    { id: 'gla', name: 'Glasgow',    lat: 55.8642, lng: -4.2518 },
+    { id: 'bel', name: 'Belfast',    lat: 54.5973, lng: -5.9301 }
   ];
 
-  // Network links (by city id). Curated to avoid lines that wrap the
-  // antimeridian the long way across the map.
+  // Network links (by city id). A simple mesh across Great Britain and
+  // Northern Ireland.
   var LINK_IDS = [
-    ['lon', 'nyc'], ['lon', 'par'], ['lon', 'fra'], ['lon', 'sao'],
-    ['lon', 'mum'], ['lon', 'jnb'], ['lon', 'tor'],
-    ['nyc', 'sfo'], ['nyc', 'tor'], ['nyc', 'sao'],
-    ['par', 'fra'], ['fra', 'mum'], ['fra', 'sgp'],
-    ['mum', 'sgp'], ['sgp', 'syd'], ['sgp', 'tok'],
-    ['tok', 'syd'], ['tok', 'sfo'], ['sao', 'jnb']
+    ['lon', 'bir'], ['lon', 'crf'], ['lon', 'man'],
+    ['bir', 'man'], ['bir', 'crf'],
+    ['man', 'lee'], ['man', 'gla'], ['man', 'bel'],
+    ['lee', 'edi'], ['edi', 'gla'], ['gla', 'bel']
   ];
 
   var COLORS = ['#7fe9ff', '#38e1ff', '#5ad1ff', '#9b8bff', '#37f0d0'];
@@ -54,6 +49,12 @@
   var W = 0, H = 0, dpr = 1;
   var originX = 0, originY = 0, sx = 0, sy = 0;
   var dotR = 1.3, nodeR = 3;
+
+  // Horizontal scale of u relative to v. A degree of longitude is shorter
+  // than a degree of latitude away from the equator; at the UK's mid-latitude
+  // (~55°N) it is ~0.57x. Folding cos(lat) into the equirectangular 2:1
+  // ratio keeps the British Isles from looking stretched sideways.
+  var ASPECT = 2 * Math.cos(55.4 * Math.PI / 180);
 
   // Offscreen layer for the static map dots (only redrawn on resize).
   var mapLayer = document.createElement('canvas');
@@ -92,8 +93,8 @@
     // the text. On larger screens centre it and let the text overlay.
     var padX = (mobile ? 0.99 : 0.94) * W;
     var padY = (mobile ? 0.52 : 0.82) * H;
-    var s = Math.min(padX / (contentU * 2), padY / contentV);
-    sx = s * 2;
+    var s = Math.min(padX / (contentU * ASPECT), padY / contentV);
+    sx = s * ASPECT;
     sy = s;
     var vCenter = mobile ? 0.34 : 0.5; // map's vertical centre as a fraction of H
     originX = (W - contentU * sx) / 2 - bounds.uMin * sx;

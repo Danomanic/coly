@@ -1,10 +1,10 @@
 # Coly
 
-Landing page for **Coly** — a global platform for hosting containerised apps (PaaS).
+Landing page for **Coly** — a UK platform for hosting containerised apps (PaaS).
 
-The page is a single, dependency-free static site: a dark dot-matrix world map
-rendered on a `<canvas>`, glowing datacentre nodes, and animated "packets" of
-data flowing between regions. Live at [coly.uk](https://coly.uk).
+The page is a single, dependency-free static site: a dark dot-matrix map of the
+UK & Ireland rendered on a `<canvas>`, glowing datacentre nodes, and animated
+"packets" of data flowing between regions. Live at [coly.uk](https://coly.uk).
 
 ## Project layout
 
@@ -35,12 +35,13 @@ npm run generate-map   # regenerate site/map-data.js only
 There are **no runtime or build dependencies** — everything runs on plain Node
 and the browser.
 
-## The world map
+## The map
 
-`scripts/generate-map.js` samples a uniform lat/lng grid and keeps points that
-fall on land (point-in-polygon against Natural Earth 110m geometry), writing
-them as normalised equirectangular coordinates to `site/map-data.js`. Tune the
-look via `STEP`, `LAT_MIN`, and `LAT_MAX` in that script.
+`scripts/generate-map.js` samples a uniform lat/lng grid over the British Isles
+and keeps points that fall on land (point-in-polygon against Natural Earth 110m
+geometry), writing them as normalised equirectangular coordinates to
+`site/map-data.js`. Tune the look via `STEP` and the `LAT_MIN`/`LAT_MAX` /
+`LNG_MIN`/`LNG_MAX` crop box in that script.
 
 Datacentre locations and the network links between them are defined in
 `site/main.js` (`CITIES` / `LINK_IDS`).
